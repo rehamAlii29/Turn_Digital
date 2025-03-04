@@ -1,95 +1,98 @@
-# Events Booking Application - Flutter
-
-Welcome to the Events Booking App built with Flutter! This app allows users to browse, book, and
-share events seamlessly with a smooth and modern experience.
+# Events Viewing Application - Flutter
 
 ## Description
 
-✅ User Authentication – Secure login, registration, and OTP verification.
-✅ Dynamic Home Screen – Displays recommended events fetched from Api
-✅ All Events Screen – Lists all available events in the app.
-✅ Event Details Screen – Shows full event details.
-✅ Organizer Profile – Displays organizer details, reviews, and their events.
-✅ Local Notifications – Notifies users 1 hour before an event to ensure they don’t miss it.
-✅ Event Sharing – Users can long-press to share event images, names, and locations on social media.
-✅ Offline Support – Events are cached locally, allowing users to browse them without an internet
-connection.
+Welcome to the Events Viewing App, built with Flutter. This app allows users to browse events, view
+event details, check organizer profiles, and share events seamlessly.
 
-## ⚙️ Tech Stack
+## Features
 
-Networking : Dio
-Local Notifications: flutter_local_notifications
-Offline Caching: Hive
-State Management: Getx
-Social Media Sharing: flutter_share_plus
-responsive UiDesign : flutter_screen_util
+1. **User Authentication** – Secure login, registration, and OTP verification.
+2. **Dynamic Home Screen** – Displays recommended events fetched from the API.
+3. **All Events Screen** – Lists all available events in the app with pagination.
+4. **Event Details Screen** – Shows complete event details.
+5. **Organizer Profile** – Displays organizer details, reviews, and their hosted events.
+6. **Local Notifications** – Notifies users 1 hour before an event.
+7. **Event Sharing** – Users can long-press to share event details on social media.
+8. **Offline Support** – Events are cached locally, allowing users to browse them without an
+   internet connection.
+
+## Tech Stack
+
+1. **Networking:** Dio
+2. **Local Notifications:** flutter_local_notifications
+3. **Offline Caching:** Hive
+4. **State Management:** GetX
+5. **Social Media Sharing:** flutter_share_plus
+6. **Responsive UI Design:** flutter_screen_util
 
 ## Project Structure & Code Quality
 
-This application follows Clean Architecture principles to ensure a scalable, maintainable, codebase.
-The project is well-structured with a clear separation of concerns, making future enhancements and
-modifications easier.
+This application follows **Clean Architecture** and **Clean Code Principles** to ensure a **scalable
+**, **maintainable**, and **readable** codebase. The project is structured with a **clear separation
+of concerns**, making future enhancements easier and improving code reusability.
+Additionally, **User Cache** is implemented to store user data locally, reducing API calls and
+enhancing offline support.
 
-✅ Code Quality & Best Practices
-🔹 Implemented Clean Code Principles – Ensuring readability, reusability, and maintainability.
-🔹 Followed Clean Architecture – Dividing the project into Presentation, Domain, and Data layers for
-better organization.
-🔹 Applied Design Patterns where needed :
+### Code Quality & Best Practices
 
-Singleton Pattern – Used for managing single instances efficiently when required.
+1. **Clean Code Principles** to improve readability, reusability, and maintainability.
+2. **Clean Architecture** with separate layers:
+    1. **Presentation Layer**
+    2. **Domain Layer**
+    3. **Data Layer**
+
+## Design Patterns
+
+The application implements different **design patterns** where needed, including the **Singleton
+Pattern**.
+
+### Singleton Pattern
+
+The **Singleton Pattern** is used throughout the project to efficiently manage single instances when
+needed. It is applied in various layers, such as:
+
+1. **Services** – Ensuring a single instance of a network or database handler.
+2. **Utilities** – Avoiding unnecessary object creation and improving performance.
 
 ## App Instructions
 
-1-Navigation
+### Navigation
 
--No external packages used
--The app does not rely on any third-party navigation libraries.
-Global Key-based navigation
--Implemented using GlobalKey<NavigatorState> for screen transitions.
-– A dedicated NavigationService has been created to provide a unified and easy
-way to handle navigation within the app.
+1. No third-party navigation libraries were used.
+2. The app relies on **GlobalKey<NavigatorState>** for screen transitions.
+3. A dedicated **NavigationService** was created to provide a unified and easy way to handle
+   navigation.
 
-2- NetWorkStructure & error handling
+### Network Structure & Error Handling
 
-This project follows a structured error-handling approach using DataState, which ensures efficient
-API response management.
-Errors are categorized and propagated through different layers (Network → Service → Repository →
-Controller → UI) to maintain stability and improve debugging.
-
-## Why Handle Errors in Different Layers?
+This project follows a structured **error-handling approach** using **DataState**, ensuring *
+*efficient API response management**. Errors are categorized and propagated through different layers
+to **maintain stability** and **improve debugging**.
 
 Each layer in the app has a specific responsibility:
 
-## Network Layer
+1. **Network Layer** – Handles low-level errors such as network failures, timeouts, or request
+   issues.
+2. **Service Layer** – Calls API endpoints and converts **DioError** into meaningful exceptions,
+   providing clear error types such as **BadRequestException** and **UnAuthorizedException** etc ...
+3. **Repository Layer** – Converts API responses into **DataState<T>** and ensures proper **parsing
+   of data**, throwing **DataFailed** if parsing fails.
+4. **Controller Layer** – Receives **DataState results** and processes them, determining whether the
+   state is **successful (DataSuccess) or failed (DataFailed)**, extracting **error messages**, and
+   updating the **UI accordingly**.
 
-Catches low-level errors like network failures, timeouts, or request issues.
+## Custom Widgets
 
-️## Service Layer
+The project includes **reusable custom widgets** to maintain **consistency** in UI components:
 
-Calls API endpoints and converts DioError into meaningful exceptions.
-Provides clear error types (BadRequestException, UnAuthorizedException, etc.).
+1. **TextFieldDefault** – A reusable text input field with consistent styling.
+2. **CustomText** – A customizable text widget for uniform typography.
+3. **ImageGeneric** – A flexible image widget for handling different image sources dynamically.
+4. **ButtonDefault** – A customizable button widget with a consistent design across the app.
+5. **DataStatusBuilder** – A widget that handles **API data states** (loading, success, error) and
+   updates the UI accordingly.
 
-## Repository Layer
+These components improve **maintainability** and ensure a **clean UI structure**.
 
-Converts API responses into DataState<T>.
-Ensures proper parsing of data and throws DataFailed with Dirty Data error if parsing fails.
-
-## Controller Layer
-
-The controller receives DataState results and processes them.
-Determines whether the state is successful (DataSuccess) or failed (DataFailed).
-Extracts error messages and updates the UI accordingly.
-
-3- Customized Widget
-
-Custom Widgets Used
-The project also includes customized widgets to maintain consistency and reusability in UI
-components. Some key widgets used are:
-
-TextFieldDefault → A reusable text input field with consistent styling.
-CustomText → A customizable text widget for uniform typography.
-ImageGeneric → A flexible image widget for handling different image sources dynamically.
-These components improve maintainability and ensure a clean UI structure.
-
-
-  
+## Enjoy seamless event discovery with the Events Viewing App! 🚀
