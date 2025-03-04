@@ -1,0 +1,22 @@
+part of 'imports_widgets_tff.dart';
+
+class TFFRequiredBuilder extends StatelessWidget {
+  const TFFRequiredBuilder({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomText(
+      "*",
+      color: AppColors.get.tTFIsRequired,
+      padding: EdgeInsetsDirectional.only(
+        // start: widget.prefixiconImage != null ? 30.0.toW() : 16.toW(),
+        // ignore: dead_code
+        start: true ? 30.0.toW() : 16.toW(),
+        bottom: 16.toH(),
+
+        /// for now
+        // bottom: widget.errorText != null ? 40.h : 0,
+      ),
+    );
+  }
+}

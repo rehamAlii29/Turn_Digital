@@ -1,0 +1,80 @@
+name: flutter_base
+description: TD task
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.4 <3.0.0'
+
+dependencies:
+  win32: ^5.5.4
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.5
+  cached_network_image:
+  # other dependencies...
+  animations: ^2.0.7
+  connectivity_plus: ^6.0.5
+  dio: ^5.7.0
+  equatable: ^2.0.5
+  flutter_lints: ^4.0.0
+  flutter_local_notifications: ^18.0.1
+  flutter_rating_bar: ^4.0.1
+  flutter_screenutil: ^5.6.0
+  flutter_spinkit: ^5.1.0
+  flutter_staggered_animations: ^1.1.1
+  fluttertoast: ^8.1.1
+  get: ^4.6.5
+  intl: ^0.19.0
+  loading_animation_widget: ^1.2.0+3
+  lottie: ^3.1.2
+  pin_code_fields: ^8.0.1
+  share_plus:
+  shimmer: ^3.0.0
+  smooth_page_indicator: ^1.0.0+2
+  path: ^1.9.0
+  test: ^1.25.2
+  readmore: ^3.0.0
+  hive_flutter: ^1.1.0
+  flutter_timezone: ^4.1.0
+
+
+
+
+dev_dependencies:
+
+  flutter_test:
+    sdk: flutter
+
+  # TODO 1.A : add your app icon here (uncomment the lines below)
+  #  flutter_launcher_icons: ^0.10.0
+  #flutter_icons:
+  #  image_path: "assets/images/logo.png"
+  #  android: "launcher_icon"
+  #  ios: true
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons/
+    - assets/images/
+    - assets/lottie/
+    - assets/audio/
+    - assets/map_styles/
+    - assets/l10n/
+    - assets/fonts/
+  # TODO 1.C : add your fonts here with all weights and styles you need
+  fonts:
+    - family: AirbnbCereal
+      fonts:
+        - asset: assets/fonts/AirbnbCereal-regular.ttf # regular/normal/plain
+          weight: 400
+        - asset: assets/fonts/AirbnbCereal-medium.otf
+          weight: 500
+        - asset: assets/fonts/AirbnbCereal-bold.otf
+          weight: 700
+
+
+dependency_overrides:
+  web: ^1.0.0  # Use cautiously, test thoroughly
