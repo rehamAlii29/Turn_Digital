@@ -6,8 +6,6 @@ abstract class ColorInterface {
 
   Color get primary => const Color(0xffF27822);
 
-  Color get primaryDarker => const Color(0xff202090);
-
   Color get primaryLighter => const Color(0xffF8A85E);
 
   Color get secondary => const Color(0xff3AC1FF);
@@ -21,12 +19,6 @@ abstract class ColorInterface {
   Color get buttonMain => main;
 
   Color get icon;
-
-  Color get switchEnabled => const Color(0xff4CD964);
-
-  Color get switchDisabled => const Color(0xffF7F8FA);
-
-  Color get switchBorder => const Color(0xffE5E5E5);
 
   Color get cardBorder;
 
@@ -45,18 +37,6 @@ abstract class ColorInterface {
   Color get activeBackground;
 
   Color get grey => const Color(0xff909AAA);
-
-  Color get fabColor => const Color(0xff000080);
-
-  Color get darkGrey => const Color(0xff6A6B76);
-
-  Color get secondaryColor => const Color(0xffFCF5E5);
-
-  Color get dateTimeBackGround => const Color(0xffF5F5F9);
-
-  Color get borderSearchFeild => const Color(0xff1C1C8E);
-
-  Color get cardDetails => const Color(0xff017DC4);
 
   // Turn
   Color get subTitle => const Color(0xff9D9898);
@@ -95,8 +75,6 @@ abstract class ColorInterface {
   Color get indicatorInactive => const Color(0xffCCCCCC);
 
   Color get appbar => main;
-
-  Color get appbarTitle => primaryDarker;
 
   Color get appBarColorInner;
 
