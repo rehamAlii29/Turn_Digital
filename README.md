@@ -61,8 +61,8 @@ needed. It is applied in various layers, such as:
 
 1. No third-party navigation libraries were used.
 2. The app relies on **GlobalKey<NavigatorState>** for screen transitions.
-3. A dedicated **NavigationService** was created to provide a unified and easy way to handle
-   navigation.
+3. A dedicated **NavigatorService** was created to manage navigation across the app, ensuring a
+   centralized and efficient way to handle screen transitions programmatically. .
 
 ### Network Structure & Error Handling
 
